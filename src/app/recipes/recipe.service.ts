@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Ingredient } from '../shared/ingredient.model';
 import { Recipe } from './recipe.model';
 
 // @Injectable({
@@ -9,14 +10,16 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
-      'A Test Recipe1',
-      'A Test Description1',
-      'https://delightfuladventures.com/wp-content/uploads/2020/04/vegan-broccoli-pasta-recipe.jpg'
+      'Vegan Broccoli Pasta',
+      'A super lovely vegan broccoli pasta, healthy and tasty!',
+      'https://delightfuladventures.com/wp-content/uploads/2020/04/vegan-broccoli-pasta-recipe.jpg',
+      [new Ingredient('Pasta', 500), new Ingredient('Broccoli', 1)]
     ),
     new Recipe(
-      'A Test Recipe2',
-      'A Test Description2',
-      'https://delightfuladventures.com/wp-content/uploads/2020/04/vegan-broccoli-pasta-recipe.jpg'
+      'Schnitzel',
+      'A super-tasty Schnitzel - just awesome!',
+      'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG',
+      [new Ingredient('Meat', 1), new Ingredient('French fries', 20)]
     ),
   ];
 
