@@ -21,4 +21,10 @@ export class ShoppingListService {
     this.ingredients.push(ingredient); // doesn't edit the copy the components are using
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
+
+  addIngredients(ingredients: Ingredient[]) {
+    // for (let i of ingredients) { addIngredient } creates too many events emitted
+    this.ingredients.push(...ingredients);
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
 }
